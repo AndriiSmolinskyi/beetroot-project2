@@ -1,0 +1,41 @@
+@use "./variables";
+
+@mixin borderWithBackground($bgColor) {
+  border: 1px solid $color-red;
+  background-color: $bgColor;
+}
+
+@mixin corner-icon($name, $top-or-bottom, $left-or-right) {
+
+  .icon-#{$name} {
+    background-image: url("/icons/#{$name}.svg");
+    position: absolute;
+    #{$top-or-bottom}: 0;
+    #{$left-or-right}: 0;
+  }
+
+}
+
+@mixin monserat700($fs, $fc){
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: $fs;
+  color: $fc;
+}
+
+@mixin monserat400($fs, $fc){
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: $fs;
+  color: $fc;
+}
+
+@mixin button{
+  @include monserat400(14px, $mainText);
+  width: 190px;
+  height: 50px;
+  border: 1px solid $mainText;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
